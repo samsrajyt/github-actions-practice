@@ -1,4 +1,4 @@
-name: Hello Workflow
+name: "Hello Workflow"
 on:
   push:
     branches:

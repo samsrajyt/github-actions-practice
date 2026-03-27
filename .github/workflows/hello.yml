@@ -3,12 +3,12 @@ on:
   push:
     branches: [main]
 
-  jobs:
-    greet:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Code Checkout
-          run: actions/checkout@v4
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-        - name: Prints Hello
-          run: echo "Hello from GitHub Actions!"
+      - name: Greets
+        run: echo "Hello From Github Actions"

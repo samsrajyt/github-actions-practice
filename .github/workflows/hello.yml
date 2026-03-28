@@ -24,4 +24,5 @@ jobs:
         run: ls ${{ github.workspace }}
 
       - name: Print the OS of runner
-        run: cat /etc/*releases
+        run: |
+          echo "OS Info:";hostnamectl|grep "Operating System"

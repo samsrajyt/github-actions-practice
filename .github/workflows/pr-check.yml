@@ -9,12 +9,13 @@ on:
 
 
 
-   jobs:
-     pr-check:
-       runs-on: ubuntu-latest
-       steps:
-         - name: PR Check
-           run: echo "PR check running for branch:${{ github.ref_name }}"
+jobs:
+  pr-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: PR Check
+        run: echo "PR check running for branch:${{ github.ref_name }}"
         
 
 

@@ -1,3 +1,4 @@
+name: manual dispatch
 on:
   workflow_dispatch:
 

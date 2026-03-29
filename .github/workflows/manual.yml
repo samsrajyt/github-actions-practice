@@ -1,11 +1,15 @@
 on:
   workflow_dispatch:
+
+    inputs:
+      env:
+        description: 'Environment name'
+        required: true
+        default: 'dev'
+        type: text
+        options:
+
   
-  inputs:
-    env:
-      description: 'The name of the staging environment'
-      required: true
-      default: 'dev'
 
 jobs:
   env_gather:
@@ -14,5 +18,5 @@ jobs:
     steps:
       - name: print env
         run: |
-            const env = getInput('env'); && console.log(`Environment name ${env}!`);
+          echo "The environment is : ${{ github.event.inputs.env }}"
 

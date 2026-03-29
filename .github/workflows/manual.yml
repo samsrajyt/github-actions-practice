@@ -1,0 +1,18 @@
+on:
+  workflow_dispatch:
+  
+  inputs:
+    env:
+      description: 'The name of the staging environment'
+      required: true
+      default: 'dev'
+
+  jobs:
+    env_gather:
+      runs-on: ubuntu-latest
+
+      steps:
+        - name: print env
+          run: |
+            const env = getInput('env'); && console.log(`Environment name ${env}!`);
+

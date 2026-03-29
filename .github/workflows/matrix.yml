@@ -11,16 +11,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python_versions: ['3.10','3.11','3.12']
+        versions: ['3.10','3.11','3.12']
     runs-on: ubuntu-latest
 
     steps:
       - name: install python version
         uses: actions/setup-python@v6
         with:
-          python_version: ${{ matrix.python_versions }}
-
-      - name: print python version
+          python_version: ${{ matrix.versions }}
         run: python --version
+
 
 

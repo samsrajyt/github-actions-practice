@@ -7,12 +7,12 @@ on:
       required: true
       default: 'dev'
 
-  jobs:
-    env_gather:
-      runs-on: ubuntu-latest
+jobs:
+  env_gather:
+    runs-on: ubuntu-latest
 
-      steps:
-        - name: print env
-          run: |
+    steps:
+      - name: print env
+        run: |
             const env = getInput('env'); && console.log(`Environment name ${env}!`);
 

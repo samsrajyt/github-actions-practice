@@ -8,7 +8,7 @@ on:
 jobs:
   python_version_check:
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix:
         versions: ['3.10','3.11','3.12']
         os: [windows-latest, ubuntu-latest]

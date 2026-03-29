@@ -6,7 +6,7 @@ on:
       env:
         description: 'Environment name'
         required: true
-        default: 'dev'
+        default: 'staging'
         type: choice
         options:
           - staging

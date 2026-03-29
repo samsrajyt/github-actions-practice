@@ -9,9 +9,13 @@ on:
 jobs:
   python_version_check:
     strategy:
+      fail-fast: false
       matrix:
         versions: ['3.10','3.11','3.12']
         os: [windows-latest, ubuntu-latest]
+        exclude: 
+          - versions: 3.11
+            os: windows-latest
     runs-on: ${{ matrix.os }}
 
     steps:

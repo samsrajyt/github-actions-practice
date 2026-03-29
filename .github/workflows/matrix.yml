@@ -1,0 +1,21 @@
+name: Matrix Workflow
+
+on:
+  push:
+    branches: [main]
+
+
+
+jobs:
+  python_version_check:
+    strategy:
+      fail-fast: false
+      matrix:
+        python_versions: ['3.10','3.11','3.12']
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: print python version
+        run: python --version
+
+

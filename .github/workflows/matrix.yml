@@ -18,9 +18,9 @@ jobs:
       - name: install python version
         uses: actions/setup-python@v6
         with:
-          python_version: ${{ matrix.verison }}
+          python_version: ${{ matrix.python_versions }}
 
       - name: print python version
-        run: python --verison
+        run: python --version
 
 

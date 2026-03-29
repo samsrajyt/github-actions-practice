@@ -6,7 +6,7 @@ on:
         description: 'Environment name'
         required: true
         default: 'dev'
-        type: text
+        type: choice
         options:
           - staging
           - production

@@ -15,7 +15,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: install python version
+        run: pip install $ {{ matrix.python_versions}}
+
       - name: print python version
-        run: python --version
+        run: python --verison
 
 

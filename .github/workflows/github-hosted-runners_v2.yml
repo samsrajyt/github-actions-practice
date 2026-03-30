@@ -23,32 +23,32 @@ jobs:
 
 
 
-    windows_runner:
-      runs_on: windows-latest
-      steps:
-        - name: print OS
-          run: |
+  windows_runner:
+    runs_on: windows-latest
+    steps:
+      - name: print OS
+        run: |
             echo "Runner OS is";wmic os get name
-        - name: Runner hostname
-          run: |
+      - name: Runner hostname
+        run: |
             echo "Hostname";hostname
 
-        - name: Current user
-          run: |
+      - name: Current user
+        run: |
             echo "Current User";whoami
 
 
-    macos_runner:
-      runs_on: macos-latest
-      steps: 
-        - name: print OS
-          run: |
+  macos_runner:
+    runs_on: macos-latest
+    steps: 
+    - name: print OS
+      run: |
             echo "RUNNER OS is";$RUNNER_OS
 
-        - name: Runner hostname
-          run: |
+    - name: Runner hostname
+      run: |
             echo "Hostname";hostname
 
-        - name: Current user 
-          run: |
+    - name: Current user 
+      run: |
             echo "Current User";whoami

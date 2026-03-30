@@ -18,9 +18,8 @@ jobs:
 
       - name: Print System Info 
         run: |
-          echo "Running on: ${{ steps.sys-info.outputs.os-name }}"
-          echo "Runner hostname:" hostname
-          echo "Current User: $RUNNER_NAME"
+          RUNNER_OS
+          RUNNER_NAME
 
 
 

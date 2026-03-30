@@ -28,7 +28,7 @@ jobs:
     steps:
       - name: print OS
         run: |
-            echo "Runner OS is";wmic os get name
+            echo "Runner OS is $RUNNER_OS"
       - name: Runner hostname
         run: |
             echo "Hostname";hostname
@@ -43,7 +43,7 @@ jobs:
     steps: 
     - name: print OS
       run: |
-            echo "RUNNER OS is";$RUNNER_OS
+            echo "RUNNER OS is $RUNNER_OS"
 
     - name: Runner hostname
       run: |

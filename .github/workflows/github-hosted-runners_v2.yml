@@ -28,7 +28,7 @@ jobs:
     steps:
       - name: print OS
         run: |
-            echo "Runner OS is ";RUNNER_OS
+            echo "Runner OS is ${{ runner.os }}"
       - name: Runner hostname
         run: |
             echo "Hostname";hostname

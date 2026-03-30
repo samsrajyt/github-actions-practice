@@ -28,7 +28,7 @@ jobs:
     steps:
       - name: print OS
         run: |
-            echo "Runner OS is " && winver
+            echo "Runner OS is ";winver
       - name: Runner hostname
         run: |
             echo "Hostname";hostname

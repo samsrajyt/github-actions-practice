@@ -13,12 +13,11 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: Collect System Information
-        uses: lexbritvin/os-info-action@v1
-        id: sys-info
-
-      - name: Print System Info 
         run: |
-          echo ${{ steps.sys-info.outputs }}
+          echo "________RUNNER INFO_____________"
+          echo "OS NAME: $RUNNER_OS"
+          echo "Hostname: $(hostname)"
+          echo "Current User: $(whoami)"
 
 
 

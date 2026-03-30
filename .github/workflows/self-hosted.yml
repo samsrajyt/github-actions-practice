@@ -7,7 +7,7 @@ on:
 
 jobs:
   selfhosted-runner:
-    runs-on: my-linux-runner
+    runs-on: [self-hosted, my-linux-runner]
     steps:
       - name: Print Self-hosted System Info
         run: |

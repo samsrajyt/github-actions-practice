@@ -15,6 +15,14 @@ jobs:
           echo "Hostname: $(hostname)"
           echo "Current User: $USER"
 
+      - name: pre-installed softwares
+        run: |
+          echo "Docker Version";docker --version
+          echo "Python Version:";python --version
+          echo "Node Version:";node --version
+          echo "Git Version:";git --version
+
+
 
 
   windows_runner:

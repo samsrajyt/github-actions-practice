@@ -9,7 +9,7 @@ jobs:
   ubuntu_runner:
     runs-on: ubuntu-latest
     steps:
-      - name: print OS
+      - name: System Info
         run: |
           echo "Runner OS is $RUNNER_OS"
           echo "Hostname: $(hostname)"
@@ -20,7 +20,7 @@ jobs:
   windows_runner:
     runs-on: windows-latest
     steps:
-      - name: print OS
+      - name: System Info
         run: |
             echo "Runner OS is ${{ runner.os }}"
             echo "Hostname";hostname
@@ -30,7 +30,7 @@ jobs:
   macos_runner:
     runs-on: macos-latest
     steps: 
-    - name: print OS
+    - name: System Info
       run: |
             echo "RUNNER OS is $RUNNER_OS"
             echo "Hostname";hostname

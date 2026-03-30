@@ -12,13 +12,7 @@ jobs:
       - name: print OS
         run: |
           echo "Runner OS is $RUNNER_OS"
-
-      - name: Runner hostname
-        run: |
           echo "Hostname: $(hostname)"
-
-      - name: Current runner
-        run: |
           echo "Current User: $USER"
 
 
@@ -29,12 +23,7 @@ jobs:
       - name: print OS
         run: |
             echo "Runner OS is ${{ runner.os }}"
-      - name: Runner hostname
-        run: |
             echo "Hostname";hostname
-
-      - name: Current user
-        run: |
             echo "Current User";whoami
 
 
@@ -44,11 +33,5 @@ jobs:
     - name: print OS
       run: |
             echo "RUNNER OS is $RUNNER_OS"
-
-    - name: Runner hostname
-      run: |
             echo "Hostname";hostname
-
-    - name: Current user 
-      run: |
             echo "Current User";whoami

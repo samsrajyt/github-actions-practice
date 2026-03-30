@@ -18,8 +18,7 @@ jobs:
 
       - name: Print System Info 
         run: |
-          RUNNER_OS
-          RUNNER_NAME
+          echo ${{ steps.sys-info.outputs }}
 
 
 

@@ -16,6 +16,7 @@ jobs:
         run: |
           echo "________RUNNER INFO_____________"
           echo "OS NAME: $RUNNER_OS"
+          echo "OS NAME: " ; hostnamectl|grep -i "Operating System"
           echo "Hostname: $(hostname)"
           echo "Current User: $(whoami)"
 

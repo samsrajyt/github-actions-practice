@@ -15,8 +15,7 @@ jobs:
       - name: Collect System Information
         run: |
           echo "________RUNNER INFO_____________"
-          echo "OS NAME: $RUNNER_OS"
-          echo "OS NAME: " ; hostnamectl|grep -i "Operating System"
+          echo "OS NAME: ${{ RUNNER_OS }}"
           echo "Hostname: $(hostname)"
           echo "Current User: $(whoami)"
 

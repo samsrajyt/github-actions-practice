@@ -4,24 +4,23 @@ on:
 
 
 jobs:
-  strategy:
-    fail-fast: false
-    matrix:
-      os: [ubuntu-latest,windows-latest,macos-latest]
-  github-runner:
-    runs-on: ${{ matrix.os }}
-    
-    steps:
-      - name: Print OS name
-        run: hostnamectl | grep -i "Operating System"
+  github_runner:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest,windows-latest,macos-latest]
+        runs-on: ${{ matrix.os }}
+        steps:
+          - name: Print OS name
+            run: hostnamectl | grep -i "Operating System"
 
-      - name: Runner Hostname
-        run: |
-          echo "Hostname:";hostname
+          - name: Runner Hostname
+            run: |
+              echo "Hostname:";hostname
 
-      - name: Current User
-        run: |
-          echo "Current User: $USER "
+          - name: Current User
+            run: |
+              echo "Current User: $USER "
 
 
 

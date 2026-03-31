@@ -38,5 +38,5 @@ jobs:
     steps:
       - name: which push
         run: |
-          echo " Push from ${{ github.event_name }}"
+          echo " Push from ${{ github.ref_name }} ${{ github.event_name }}"
           echo " Commit Message ${{ github.event.commits[0].message }}"

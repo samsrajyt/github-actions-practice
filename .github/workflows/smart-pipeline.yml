@@ -12,16 +12,13 @@ jobs:
       - name: Setup python
         uses: actions/setup-python@v5
         with:
-          python-version: 3.8
+          python-version: 3.12
 
       - name: Install Pyhton Dependencies
-        run: pip install black flake8
+        run: pip install -r requirements.txt
 
-      - name: Run linters
-        run: wearerequired/lint-action@v2
-        with:
-          black: true
-          flake8: true
+      - name: Run linters 
+        run: flake8 app.py
 
 
   test:

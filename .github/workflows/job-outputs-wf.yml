@@ -11,6 +11,8 @@ jobs:
       - name: date
         run: |
           echo "date=$(date)" >> $GITHUB_OUTPUT
+    outputs:
+      ${{ steps.date.outputs.date }}
 
 
   print-date:

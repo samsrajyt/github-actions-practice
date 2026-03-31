@@ -8,9 +8,10 @@ jobs:
   date-string:
     runs-on: ubuntu-latest
     outputs:
-      ${{ steps.date.outputs.date }}
+      ${{ steps.get_date.outputs.date }}
     steps:
       - name: date
+        id: get_date
         run:
           echo "date=$(date)" >> GITHUB_OUTPUT
 

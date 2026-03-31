@@ -16,8 +16,8 @@ jobs:
   print-date:
     runs-on: ubuntu-latest
     needs: date-string
-    steps:
-      run: |
-        echo "${{ needs.date-string.output.date }}"
+      steps:
+        run: |
+          echo "${{ needs.date-string.output.date }}"
 
 

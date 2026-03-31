@@ -10,7 +10,8 @@ jobs:
     steps:
       - name: date
     outputs:
-      echo "date=$(date)" >> $GITHUB_OUTPUT
+      run: |
+        echo "date=$(date)" >> $GITHUB_OUTPUT
 
   print-date:
     runs-on: ubuntu-latest

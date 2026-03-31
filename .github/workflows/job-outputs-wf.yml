@@ -11,7 +11,8 @@ jobs:
       - name: date
         run: |
           echo "date=$(date)" >> $GITHUB_OUTPUT
-
+  outputs:
+    ${{ date-string.outputs.date }}
   print-date:
     runs-on: ubuntu-latest
     needs: date-string

@@ -6,9 +6,8 @@ on:
 
 
 jobs:
-  
+ENVIRONMENT: staging  
   print-env:
-    ENVIRONMENT: staging
     runs-on: ubuntu-latest
     steps:
       VERSION: 1.0.0

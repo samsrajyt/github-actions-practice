@@ -8,7 +8,7 @@ jobs:
   date-string:
     runs-on: ubuntu-latest
     outputs:
-      ${{ steps.get_date.outputs.date }}
+      date: ${{ steps.get_date.outputs.date }}
     steps:
       - name: date
         id: get_date

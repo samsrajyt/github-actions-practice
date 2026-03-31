@@ -17,6 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: date-string
     steps:
-      run: echo "${{ needs.date-string.output.date }}"
+      run: |
+        echo "${{ needs.date-string.output.date }}"
 
 

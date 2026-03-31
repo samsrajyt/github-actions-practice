@@ -18,7 +18,9 @@ jobs:
     needs: date-string
       steps:
         - name: print date
+          env:
+            output: ${{ needs.date-string.output.date }}
           run: |
-            echo "${{ needs.date-string.output.date }}"
+            echo "$output"
 
 

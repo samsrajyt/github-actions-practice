@@ -16,11 +16,11 @@ jobs:
   print-date:
     runs-on: ubuntu-latest
     needs: date-string
-      steps:
-        - name: print date
-          env:
-            output: ${{ needs.date-string.output.date }}
-          run: |
-            echo "$output"
+    steps:
+      - name: print date
+        env:
+          output: ${{ needs.date-string.output.date }}
+        run: |
+          echo "$output"
 
 

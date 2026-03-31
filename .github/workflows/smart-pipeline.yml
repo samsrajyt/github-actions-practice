@@ -1,0 +1,45 @@
+name: Smart Pipeline
+on:
+  push:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v6
+
+      - name: Setup python
+        uses: actions/setup-pyhton@v1
+        with:
+          python-version: 3.8
+
+      - name: Install Pyhton Dependencies
+        run: pip install black flake8
+
+      - name: Run linters
+        run: wearerequired/lint-action@v2
+        with:
+          black: true
+          flake8: true
+
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: testing
+        run: echo "Testing"
+
+
+
+
+
+
+  summary:
+    needs: [ lint, test ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: which push
+        run: |
+          echo " Push from ${{ github.event_name }}"
+        echo " Commit Message ${{ github.event.commits[0].message }}"

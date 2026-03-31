@@ -1,20 +1,24 @@
 name: environment variables
-APP_NAME: myapp
 on:
   workflow_dispatch:
 
+env:
+  APP_NAME: myapp
 
 
 jobs:
-ENVIRONMENT: staging  
   print-env:
+    env:
+      ENVIRONMENT: staging
+
+
     runs-on: ubuntu-latest
     steps:
-      VERSION: 1.0.0
       - name: print env
         run: |
           echo "worfklow level: $APP_NAME"
-          echo "Job level: ${{ print-env.ENVIRONMENT }}"
-          echo "Step level: ${{ print-env.steps.VERSION }}"
+          echo "Job level: $ENVIRONMENT"
+          echo "Step level: $VERSION"
 
-  
+      env:
+        VERSION: 1.0.0

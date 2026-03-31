@@ -7,11 +7,12 @@ on:
 jobs:
   date-string:
     runs-on: ubuntu-latest
+    outputs:
+      ${{ steps.date.outputs.date }}
     steps:
       - name: date
-    outputs:
-      run: |
-        echo "date=$(date)" >> $GITHUB_OUTPUT
+        run:
+          echo "date=$(date)" >> GITHUB_OUTPUT
 
   print-date:
     runs-on: ubuntu-latest

@@ -42,4 +42,4 @@ jobs:
       - name: which push
         run: |
           echo " Push from ${{ github.event_name }}"
-        echo " Commit Message ${{ github.event.commits[0].message }}"
+          echo " Commit Message ${{ github.event.commits[0].message }}"

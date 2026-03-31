@@ -12,14 +12,13 @@ jobs:
         run: |
           echo "date=$(date)" >> $GITHUB_OUTPUT
 
-
   print-date:
     runs-on: ubuntu-latest
     needs: date-string
     steps:
       - name: print date
         env:
-          output: ${{ needs.date-string.output.date }}
+          output: ${{ needs.date-string.outputs.date }}
         run: |
           echo "$output"
 

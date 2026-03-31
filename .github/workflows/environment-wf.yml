@@ -8,11 +8,9 @@ env:
 
 jobs:
   print-env:
+    runs-on: ubuntu-latest
     env:
       ENVIRONMENT: staging
-
-
-    runs-on: ubuntu-latest
     steps:
       - name: print env
         run: |

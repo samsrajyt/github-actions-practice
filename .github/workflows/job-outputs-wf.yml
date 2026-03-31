@@ -16,7 +16,7 @@ jobs:
         id: get_date 
         # 3. Use the run command to write to $GITHUB_OUTPUT
         run: |
-          echo "date=$(date)" >> "$GITHUB_OUTPUT"
+          echo "date=$(date)" >> $GITHUB_OUTPUT
 
   print-date:
     runs-on: ubuntu-latest

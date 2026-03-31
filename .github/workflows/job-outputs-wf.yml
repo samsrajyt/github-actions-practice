@@ -1,3 +1,4 @@
+name: Job Output
 on:
   push:
     branches: [main]
@@ -15,7 +16,7 @@ jobs:
       - name: System Date
         id: step1
         run: |
-          echo "date=$(date)" >> GITHUB_OUTPUT
+          echo "date=$(date)" >> $GITHUB_OUTPUT
 
   print-date:
     runs-on: ubuntu-latest

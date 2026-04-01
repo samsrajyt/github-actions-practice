@@ -23,11 +23,12 @@ jobs:
   download-artifact:
     runs-on: ubuntu-latest
     steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v4
         with:
           name: job1-artifact
 
+        
+      - name: Display contents of Artifact
         run: |
           echo "Contents of Job1 Artifact"
           cat file-generated.txt

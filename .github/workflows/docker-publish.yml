@@ -1,7 +1,5 @@
 on:
   push:
-    branches:
-      - '**'
 
 
 
@@ -36,15 +34,5 @@ jobs:
             ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:sha-${{ steps.sasha.outputs.short_sha }}
       
 
-      - name: Build Image if push is from other branches
-        if: ${{ github.ref_name != 'main' }}
-        uses: docker/build-push-action@v7
-        with:
-          context: ./AI-BankApp-DevOps
-          file: ./AI-BankApp-DevOps/Dockerfile.multistage
-          push: false
-          tags: |
-            ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
-            ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:sha-${{ steps.sasha.outputs.short_sha }}
 
 

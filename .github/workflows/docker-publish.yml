@@ -18,6 +18,11 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
 
+      - name: short sha
+        id: sasha
+        run: |
+          echo "short_sha=$(echo ${{ github.ref}} | cut -c1-7 )" >> $GITHUB_OUTPUT
+
 
       - name: Build image
         uses: docker/build-push-action@v7
@@ -27,7 +32,5 @@ jobs:
           push: true
           tags: | 
             ${{ github.repository }}:latest
-            ${{ github.repository }}:sha-$short_sha
-        env:
-          short_sha: echo ${{ github.sha }} | cut -c1-7
+            ${{ github.repository }}:sha-${{ steps.sasha.outputs.short_sha }}
 

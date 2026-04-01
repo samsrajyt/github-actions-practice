@@ -27,6 +27,6 @@ jobs:
           context: ./AI-BankApp-DevOps 
           file: ./AI-BankApp-DevOps/Dockerfile.multistage
           push: true
-          tags: 
+          tags: | 
             ${{ github.repository }}:latest
-            ${{ github.repository }}:sha-$short_sha
+            ${{ github.repository }}:sha-$(echo ${{ github.sha }} | cut -c1-7)

@@ -33,14 +33,4 @@ jobs:
             ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
             ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:sha-${{ steps.sasha.outputs.short_sha }}
 
-      - name: Build image if not pushed from main
-        if: ${{ github.ref != 'main' }}
-        uses: docker/build-push-action@v7
-        with:
-          context: ./AI-BankApp-DevOps
-          file: ./AI-BankApp-DevOps/Dockerfile.multistage
-          push: false
-          tags: |
-            ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
-            ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:sha-${{ steps.sasha.outputs.short_sha }}
 

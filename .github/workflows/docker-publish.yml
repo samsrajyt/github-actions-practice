@@ -31,6 +31,6 @@ jobs:
           file: ./AI-BankApp-DevOps/Dockerfile.multistage
           push: true
           tags: | 
-            ${{ github.repository }}:latest
-            ${{ github.repository }}:sha-${{ steps.sasha.outputs.short_sha }}
+            ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
+            ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:sha-${{ steps.sasha.outputs.short_sha }}
 

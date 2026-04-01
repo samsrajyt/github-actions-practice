@@ -15,6 +15,6 @@ jobs:
       - name: Build image
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./Dockerfile.multistage
           push: false
           tags: ${{ secrets.DOCKER_USERNAME }}/ai-bank-app_${{ github.sha }}

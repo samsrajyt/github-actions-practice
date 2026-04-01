@@ -1,6 +1,5 @@
 on:
   push:
-    branches: [main]
 
 
 
@@ -31,6 +30,16 @@ jobs:
           file: ./AI-BankApp-DevOps/Dockerfile.multistage
           push: ${{ github.ref_name == 'main' }}
           tags: | 
+            ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
+            ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:sha-${{ steps.sasha.outputs.short_sha }}
+
+      - name: Build image
+        uses: docker/build-push-action@v7
+        with:
+          context: ./AI-BankApp-DevOps
+          file: ./AI-BankApp-DevOps/Dockerfile.multistage
+          push: ${{ github.ref_name == 'main' }}
+          tags: |
             ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
             ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:sha-${{ steps.sasha.outputs.short_sha }}
 

@@ -28,7 +28,6 @@ jobs:
           tags: | 
             ${{ github.repository }}:latest
             ${{ github.repository }}:sha-$(short_sha)
-          env:
-
-            short_sha: echo ${{ github.sha }} | cut -c1-7
+        env:
+          short_sha: echo ${{ github.sha }} | cut -c1-7
 

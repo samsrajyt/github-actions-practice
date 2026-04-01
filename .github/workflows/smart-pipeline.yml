@@ -14,9 +14,17 @@ jobs:
         with:
           python-version: 3.12
 
-      - uses: actions/cache@v4
-        id: python-cache
-        path: ~/.cache/pip
+      - name: Cache Pip
+        uses: actions/cache@v4
+        with:
+          # Path to the local pip cache on Ubuntu
+          path: ~/.cache/pip
+          # The key is generated based on your requirements file
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          # Allows restoring from a partial match if the exact key isn't found
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
 
       - name: Install Pyhton Dependencies
         run: pip install -r requirements.txt

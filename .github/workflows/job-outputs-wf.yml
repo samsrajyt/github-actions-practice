@@ -10,8 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       date: ${{steps.step1.outputs.date}}
-
-
     steps:
       - name: System Date
         id: step1

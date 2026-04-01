@@ -1,0 +1,21 @@
+on:
+  push:
+    branches: [main]
+
+
+
+jobs:
+  docker-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v6
+
+
+      - name: Build image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: false
+          tags:
+            - ${{ DOCKER_USERNAME }}/ai-bank-app_${{ github_sha }}

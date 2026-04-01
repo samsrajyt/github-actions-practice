@@ -29,7 +29,7 @@ jobs:
         with:
           context: ./AI-BankApp-DevOps 
           file: ./AI-BankApp-DevOps/Dockerfile.multistage
-          push: {{ github.ref_name == 'main' }}
+          push: ${{ github.ref_name == 'main' }}
           tags: | 
             ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
             ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:sha-${{ steps.sasha.outputs.short_sha }}

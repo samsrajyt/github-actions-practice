@@ -1,0 +1,52 @@
+on:
+  workflow_call
+
+
+    inputs:
+      app_name:
+        description: "name of the app"
+        type: string
+        required: true
+
+
+
+      environment:
+        description: "Environment name"
+        type: string
+        required: true
+        default: 'staging'
+
+      secrets:
+        docker_token:
+          description: "This contains the docker PAT"
+          required: true
+
+
+
+
+  jobs:
+    reusable-build:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Check out Code 
+          uses: actions/checkout@v6
+
+        - name: Print app name and environment
+          run:
+            echo "Building ${{ github.event.inputs.app_name }} for ${{ github.event.inputs.environment }}"
+
+
+        - name: check docker_token is set
+          run: |
+            token=${{ github.event.secrets.docker_token }}
+            if [ -z $token ]; then
+              echo "Docker token is set: false"
+            else
+              echo "Docker token is set: true"
+            fi
+
+
+
+
+
+

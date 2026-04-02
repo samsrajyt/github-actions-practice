@@ -33,7 +33,7 @@ jobs:
 
       - name: Print app name and environment
         run:
-          echo "Building ${{ github.event.inputs.app_name }} for ${{ github.event.inputs.environment }}"
+          echo "Building ${{ inputs.app_name }} for ${{ inputs.environment }}"
 
 
       - name: check docker_token is set

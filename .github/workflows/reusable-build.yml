@@ -38,7 +38,7 @@ jobs:
 
       - name: check docker_token is set
         run: |
-          token=${{ github.event.secrets.docker_token }}
+          token=${{ secrets.docker_token }}
           if [ -z $token ]; then
             echo "Docker token is set: false"
           else

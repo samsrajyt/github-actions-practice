@@ -1,6 +1,6 @@
 name: environment variables
 on:
-  workflow_dispatch
+  workflow_dispatch:
 
 env:
   APP_NAME: myapp

@@ -1,6 +1,6 @@
 name: Download Artifacts Between Jobs
 on:
-  workflow_dispatch
+  workflow_dispatch:
 
 
 jobs:

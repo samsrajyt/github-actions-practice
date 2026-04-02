@@ -16,10 +16,10 @@ on:
         required: true
         default: 'staging'
 
-      secrets:
-        docker_token:
-          description: "This contains the docker PAT"
-          required: true
+    secrets:
+      docker_token:
+        description: "This contains the docker PAT"
+        required: true
 
 
 

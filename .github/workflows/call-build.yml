@@ -6,7 +6,6 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
     uses: ./.github/workflows/reusable-build.yml
     with:
       app_name: "my-web-app"

@@ -12,11 +12,8 @@ jobs:
       docker_token: ${{ secrets.DOCKER_TOKEN }}
 
   print-build-version:
-    - needs: build
-      uses: ./.github/workflows/reusable-build.yml
-    
-    - name: print 
-      run: |
-        echo "Build Version: $build_version"
+    needs: build
+    steps:
+      echo "Build Version: ${{ needs.jobs.build.outputs.build_version }}"
 
     

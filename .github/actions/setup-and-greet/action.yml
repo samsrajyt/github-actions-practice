@@ -12,7 +12,7 @@ inputs:
     default: 'en'
 outputs:
   greeted:
-    value: {{ steps.greet.outputs.greeted }}
+    value: ${{ steps.greet.outputs.greeted }}
 
 runs:
   using: "composite"
@@ -24,16 +24,19 @@ runs:
         else
           echo "Namaste, sasriyakal , vanakam , vandanam , vismayam"
         fi
+      shell: bash
 
 
     - name: print current date and runner OS
       run: |
         echo "Current date:";date
         echo "Runner OS ${{ runner.os }}"
+      shell: bash
 
     - name: set an output 
       id: greet
       run: |
         echo "greeted=true" >> $GITHUB_OUTPUT
+      shell: bash
 
 

@@ -11,6 +11,9 @@ jobs:
       - uses: actions/checkout@v6
       - id: one
         uses: ./.github/actions/setup-and-greet/
+        with:
+          name: Sam
+          language: en
 
       - run: echo "Greeted Status= $greeted"
         shell : bash

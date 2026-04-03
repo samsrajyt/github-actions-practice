@@ -23,7 +23,7 @@ on:
 
     outputs:
       name: build_version
-      value: ${{ jobs.build_id.outputs.build_version }}
+      value: ${{ jobs.build-version.outputs.build_version }}
 
 
 
@@ -52,6 +52,8 @@ jobs:
 
   build-version:
     runs-on: ubuntu-latest
+    outputs:
+      build_version: ${{ steps.build_id.outputs.build_version }}
     steps:
       - name: generate build version
         id: build_id

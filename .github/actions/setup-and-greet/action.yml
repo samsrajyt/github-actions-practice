@@ -19,7 +19,7 @@ runs:
   steps:
     - name: Greeting
       run: |
-        if [${{ inputs.language }} == 'en']; then
+        if [ ${{ inputs.language }} == en ]; then
           echo "Hello, please to meet you"
         else
           echo "Namaste, sasriyakal , vanakam , vandanam , vismayam"

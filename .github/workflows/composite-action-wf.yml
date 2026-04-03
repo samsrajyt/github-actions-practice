@@ -8,6 +8,7 @@ jobs:
   triger-composite-actions:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@vv6
       - name: calling composite actions
         uses: ./.github/actions/setup-and-greet/
 

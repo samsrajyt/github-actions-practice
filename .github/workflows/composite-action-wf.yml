@@ -15,6 +15,6 @@ jobs:
       - run: echo "Greeted Status= $greeted"
         shell : bash
         env: 
-          greeted: $ {{steps.one.outputs.greeted}} 
+          greeted: ${{steps.one.outputs.greeted}} 
 
 

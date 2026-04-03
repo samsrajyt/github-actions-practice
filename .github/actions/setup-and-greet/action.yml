@@ -2,13 +2,11 @@ name: Custom Composite Actions
 inputs:
   name:
     description: takes the name
-    type: string
     required: true
         
   languauge:
     description: language perference
     required: true
-    type: string
     default: 'en'
 outputs:
   greeted:

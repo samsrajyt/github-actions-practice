@@ -6,6 +6,9 @@ on:
 
 jobs:
   triger-composite-actions:
-    uses: ./.github/actions/setup-and-greet/
+    runs-on: ubuntu-latest
+    steps:
+      - name: calling composite actions
+        uses: ./.github/actions/setup-and-greet/
 
 

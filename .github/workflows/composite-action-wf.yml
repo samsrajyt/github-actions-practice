@@ -12,8 +12,8 @@ jobs:
       - id: one
         uses: ./.github/actions/setup-and-greet/
         with: 
-          name: 'Sam'
-          language: 'en' 
+          name: Sam
+          language: en 
 
       - run: echo "Greeted Status= $greeted"
         shell : bash

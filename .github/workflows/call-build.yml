@@ -16,6 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "Build Version: ${{ needs.jobs.build.outputs.build_version }}"
+          echo "Build Version: ${{ needs.build.outputs.build_version }}"
 
     

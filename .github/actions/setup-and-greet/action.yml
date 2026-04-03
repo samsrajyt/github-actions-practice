@@ -1,0 +1,45 @@
+name: Custom Composite Actions
+on:
+  workflow_call:
+    inputs:
+      name:
+        description: takes the name
+        type: string
+        required: true
+        
+      languauge:
+        description: language perference
+        required: true
+        type: string
+        default: 'en'
+      outputs:
+        greeted:
+          value: {{ jobs.setup-and-greet.outputs.greeted }}
+
+
+jobs:
+  setup-and-greet:
+    runs-on: ubuntu-latest
+    outputs:
+      greeted: ${{ steps.greet.outputs.greeted }}
+    steps:
+      - name: Greeting
+        run: |
+          if [${{ inputs.language }} == 'en']; then
+            echo "Hello, please to meet you"
+          else
+            echo "Namaste, sasriyakal , vanakam , vandanam , vismayam"
+          fi
+
+
+        - name: print current date and runner OS
+          run: |
+            echo "Current date:";date
+            echo "Runner OS ${{ runner.os }}"
+
+        - name: set an output 
+          id: greet
+          run: |
+            echo "greeted=true" >> $GITHUB_OUTPUT
+
+

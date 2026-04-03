@@ -22,8 +22,8 @@ on:
         required: true
 
     outputs:
-      name: build_version
-      value: ${{ jobs.build-version.outputs.build_version }}
+      build_version:
+        value: ${{ jobs.build-version.outputs.build_version }}
 
 
 

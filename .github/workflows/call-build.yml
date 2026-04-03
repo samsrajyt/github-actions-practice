@@ -13,6 +13,7 @@ jobs:
 
   print-build-version:
     needs: build
+    runs-on: ubuntu-latest
     steps:
       echo "Build Version: ${{ needs.jobs.build.outputs.build_version }}"
 

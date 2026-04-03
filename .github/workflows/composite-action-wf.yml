@@ -1,0 +1,11 @@
+on:
+  workflow_dispatch:
+
+
+
+
+jobs:
+  triger-composite-actions:
+    - uses: ./.github/actions/setup-and-greet
+
+

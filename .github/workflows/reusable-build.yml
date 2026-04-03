@@ -21,6 +21,11 @@ on:
         description: "This contains the docker PAT"
         required: true
 
+    outputs:
+      name: build_version
+      value: ${{ jobs.build_id.outputs.build_version }}
+
+
 
 
 
@@ -45,7 +50,13 @@ jobs:
             echo "Docker token is set: true"
           fi
 
-
+  build-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: generate build version
+        id: build_id
+        run: |
+          echo "build_version=v1.0-${{ github.sha }}" >> $GITHUB_OUTPUT
 
 
 

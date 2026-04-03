@@ -10,7 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - id: one
-      - name: calling composite actions
         uses: ./.github/actions/setup-and-greet/
 
       - run: echo "Greeted Status= $greeted"

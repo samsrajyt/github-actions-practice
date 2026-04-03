@@ -6,8 +6,8 @@ inputs:
         
   languauge:
     description: language perference
-    required: true
-    default: 'en'
+    required: false
+    default: en
 outputs:
   greeted:
     value: ${{ steps.greet.outputs.greeted }}

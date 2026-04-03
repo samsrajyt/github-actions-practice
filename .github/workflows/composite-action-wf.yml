@@ -6,6 +6,6 @@ on:
 
 jobs:
   triger-composite-actions:
-    uses: ./.github/actions/setup-and-greet@v1
+    uses: ./.github/actions/setup-and-greet/
 
 

@@ -30,7 +30,6 @@ jobs:
       - name: branch name check
         run: |
           branch_name=${{ github.head_ref }}
-          feature/*, fix/*, or docs/*
           case "$branch_name" in
             feature/*|fix/*|docs/*)
               echo "$branch_name is Valid"

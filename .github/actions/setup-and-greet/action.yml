@@ -4,7 +4,7 @@ inputs:
     description: takes the name
     required: true
         
-  languauge:
+  language:
     description: language perference
     required: false
     default: en

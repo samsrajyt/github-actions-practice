@@ -13,16 +13,16 @@ jobs:
 
       - name: file check 
         run: |
-          for file in .
-            do 
-             if [ $(du -sh $file | awk '{print $1}'|cut -c1) -gt 1000 ] 
-             then 
-               echo "File is greater than 1 MB , please check"
-               exit 1
+          LARGE_FILES=$(find . -type f -size +1M)
+          if [ -n "$LARGE_FILE" ] 
+            then 
+              echo "File is greater than 1 MB , please check"
+              echo "$LARGE_FILES"
+              exit 1
              else
                echo " File check Passed"
-             fi 
-            done
+          fi 
+            
 
   branch-name-check:
     runs-on: ubuntu-latest
@@ -32,14 +32,13 @@ jobs:
           branch_name=${{ github.head_ref }}
           feature/*, fix/*, or docs/*
           case "$branch_name" in
-            feature/*)
-              echo "Valid branch name"
-            fix/*)
-              echo "Valid branch name"
-            docs/*)
-              echo "Valid branch name"
+            feature/*|fix/*|docs/*)
+              echo "$branch_name is Valid"
+              ;;
             *)
               echo "Invalid branch name"
+              exit 1
+              ;;
 
           esac
 
@@ -54,6 +53,6 @@ jobs:
           if [ -z $pr_body ]; then
             echo "Warning: Description is empty .....Proceeding"
           else
-            echo "PR Description is not null"
+            echo "PR Description looks good"
           fi
   

@@ -20,6 +20,8 @@ jobs:
              then 
                echo "File is greater than 1 MB , please check"
                exit 1
+             else
+               echo " File check Passed"
              fi 
             done
 

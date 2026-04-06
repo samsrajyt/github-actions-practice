@@ -1,0 +1,26 @@
+name: PR-Check
+on:
+  workflow_dispatch:
+
+  # pull_request: [main]
+
+
+jobs:
+  file-size-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v6
+
+      - name: file check 
+        run: |
+          for file in ${{ github.action_repository }}
+            do 
+             if [ $(du -sh $file | awk '{print $1}'|cut -c1) >= 1000 ]
+             then 
+               echo "File is greater than 1 MB , please check"
+               exit 1
+             fi 
+            done
+
+  

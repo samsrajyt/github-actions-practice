@@ -1,7 +1,6 @@
 name: Job Output
 on:
-  push:
-    branches: [main]
+  workflow_dispatch:
 
 
 

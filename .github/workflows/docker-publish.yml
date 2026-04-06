@@ -1,5 +1,5 @@
 on:
-  push:
+  workflow_dispatch:
 
 
 
@@ -32,5 +32,8 @@ jobs:
           tags: | 
             ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
             ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:sha-${{ steps.sasha.outputs.short_sha }}
+      
+
+
 
 

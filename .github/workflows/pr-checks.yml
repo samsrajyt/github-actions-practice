@@ -1,8 +1,6 @@
 name: PR-Check
 on:
-  workflow_dispatch:
-
-  # pull_request: [main]
+  pull_request: [main]
 
 
 jobs:
@@ -25,4 +23,33 @@ jobs:
              fi 
             done
 
+  branch-name-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: branch name check
+        run: |
+          branch_name=${{ github.head_ref }}
+          feature/*, fix/*, or docs/*
+          case "$branch_name" in
+            feature/*)
+              echo "Valid branch name"
+            fix/*)
+              echo "Valid branch name"
+            docs/*)
+              echo "Valid branch name"
+            *)
+              echo "Invalid branch name"
+
+          esac
+
+          
+  pr-body-check:
+    runs-on: ubuntu-latest
+    steps:
+      pr_body=${{ github.event.pull_request.body }}
+      if [ -z $pr_body ]; then
+        echo "Warning: Description is empty .....Proceeding"
+      else
+        echo "PR Description is not null"
+      fi
   

@@ -46,10 +46,13 @@ jobs:
   pr-body-check:
     runs-on: ubuntu-latest
     steps:
-      pr_body=${{ github.event.pull_request.body }}
-      if [ -z $pr_body ]; then
-        echo "Warning: Description is empty .....Proceeding"
-      else
-        echo "PR Description is not null"
-      fi
+      - name: pr body check
+        run: |
+
+          pr_body=${{ github.event.pull_request.body }}
+          if [ -z $pr_body ]; then
+            echo "Warning: Description is empty .....Proceeding"
+          else
+            echo "PR Description is not null"
+          fi
   

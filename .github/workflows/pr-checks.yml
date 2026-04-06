@@ -14,7 +14,7 @@ jobs:
 
       - name: file check 
         run: |
-          for file in "${{ github.action_repository }}"
+          for file in .
             do 
              if [ $(du -sh $file | awk '{print $1}'|cut -c1) >= 1000 ]
              then 

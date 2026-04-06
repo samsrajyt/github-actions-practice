@@ -6,15 +6,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: print event type
-        run: echo "Event type fired: ${{ github.event.action }}"
+        run: |
+          echo "Event type fired: ${{ github.event.action }}"
 
 
       - name: print PR title
-        run: echo "PR title: ${{ github.event.pull_request.title }}"
+        run: |
+          echo "PR title: ${{ github.event.pull_request.title }}"
 
 
       - name: print PR author
-        run: echo "PR author: ${{ github.event.pull_request.user.login }}"
+        run: |
+          echo "PR author: ${{ github.event.pull_request.user.login }}"
 
       - name: print target and source branch
         run: |

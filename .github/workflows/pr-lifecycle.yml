@@ -1,5 +1,6 @@
 on:
-  pull_request: [opened, synchronize, reopened, closed]
+  pull_request: 
+    types: [opened, synchronize, reopened, closed]
 
 jobs:
   pr-request:

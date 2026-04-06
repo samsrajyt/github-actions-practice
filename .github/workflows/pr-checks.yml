@@ -16,7 +16,7 @@ jobs:
         run: |
           for file in .
             do 
-             if [ $(du -sh $file | awk '{print $1}'|cut -c1) >= 1000 ]
+             if [ $(du -sh $file | awk '{print $1}'|cut -c1) -gt 1000 ] 
              then 
                echo "File is greater than 1 MB , please check"
                exit 1

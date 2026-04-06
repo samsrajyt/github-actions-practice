@@ -50,7 +50,7 @@ jobs:
 
           pr_body=${{ github.event.pull_request.body }}
           if [ -z $pr_body ]; then
-            echo "Warning: Description is empty .....Proceeding"
+            echo "::Warning :: Description is empty .....Please add context!"
           else
             echo "PR Description looks good"
           fi

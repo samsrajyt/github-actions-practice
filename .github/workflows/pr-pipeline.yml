@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "PR Checks passed for branch : ${{ github.head_ref }}
+          echo "PR Checks passed for branch : ${{ github.head_ref }}"
 
 
 

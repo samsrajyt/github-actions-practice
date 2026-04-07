@@ -52,7 +52,7 @@ jobs:
       - name: Set final output
         id: test_result
         run: |
-          if [[ ${{ steps.exit_code.outcome == "success" }} ]];then
+          if [[ "${{ steps.exit_code.outcome}}" == "success" ]];then
             echo "test_result=passed" >> $GITHUB_OUTPUT
           else
             echo "test_result=failed" >> $GITHUB_OUTPUT

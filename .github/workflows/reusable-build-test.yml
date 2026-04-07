@@ -8,7 +8,7 @@ on:
         type: number
         required: true
 
-    run_tests:
+      run_tests:
         description: to run test or not
         type: boolean
         default: true

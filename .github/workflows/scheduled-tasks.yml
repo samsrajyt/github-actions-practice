@@ -1,8 +1,9 @@
 name: Scheduled Workflows
 on:
+  workflow_dispatch:
 
   schedule:
-    - cron: '24 21 * * *'
+    - cron: '30 2 * * 1'
     - cron: '0 */6 * * *'
 
 
@@ -13,10 +14,14 @@ jobs:
     steps:
       - name: Print which Schedule Triggered
         run: |
-          echo "Schedule Triggered : ${{ github.event.schedule }}"
+          if [ -z "${{ github.event.schedule }}" ];then
+            echo "Manually triggered"
+          else
+            echo "Schedule Triggered : ${{ github.event.schedule }}"
+          fi
 
       - name: Health Check
         run: |
           response_code=$(curl -s -o /dev/null -w "%{http_code}" https://github.com/samsrajyt/90DaysOfDevOps)
-          echo "Response Code: $response_code"
+          echo "HTTP Status: $response_code"
 

@@ -1,0 +1,25 @@
+name: PR-pipeline
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
+
+jobs:
+  build:
+    uses: ./.github/workflows/reusable-build-test.yml
+    with:
+      run_tests: true
+      python_version: 3.14
+
+
+
+    pr-comment:
+      needs: build
+      runs-on: ubuntu-latest
+      steps:
+        - run: |
+            echo "PR Checks passed for branch : ${{ github.ref_name }}
+
+
+
+

@@ -18,6 +18,6 @@ jobs:
 
       - name: Health Check
         run: |
-          resposne_code=$(curl -s -o /dev/null -w "%{http_code}" https://github.com/samsrajyt/90DaysOfDevOps)
+          response_code=$(curl -s -o /dev/null -w "%{http_code}" https://github.com/samsrajyt/90DaysOfDevOps)
           echo "Response Code: $response_code"
 

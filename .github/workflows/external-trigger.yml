@@ -6,7 +6,8 @@ on:
 jobs:
   print-client-payload:
     runs-on: ubuntu-latest
-    - run: |
-        echo "Client Payload: ${{ github.event.client_payload.environment }}
+    steps:
+      - run: |
+          echo "Client Payload: ${{ github.event.client_payload.environment }}
         
 

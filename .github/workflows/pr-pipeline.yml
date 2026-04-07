@@ -13,12 +13,12 @@ jobs:
 
 
 
-    pr-comment:
-      needs: build
-      runs-on: ubuntu-latest
-      steps:
-        - run: |
-            echo "PR Checks passed for branch : ${{ github.ref_name }}
+  pr-comment:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "PR Checks passed for branch : ${{ github.ref_name }}
 
 
 

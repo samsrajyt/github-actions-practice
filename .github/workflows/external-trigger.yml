@@ -8,6 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "Client Payload: ${{ github.event.client_payload.environment }}
+          echo "Client Payload: ${{ github.event.client_payload.environment }}"
         
 

@@ -4,19 +4,18 @@ on:
 
     inputs:
        image_name:
-         desc: holds image name
+         description: 'holds image name'
          type: string
-         default: "ai-bank-app"
+         required: true
 
        tag:
-         desc: holds the tag of the image built
+         description: holds the tag of the image built
          type: string
-         defualt: 'latest'
+         required: true
   
     outputs:
       image_url:
-        ${{ jobs.reusable-build-and-push.outputs.image_url }}
-     
+        value: ${{ jobs.reusable-build-and-push.outputs.image_url }}
 
 
 jobs:

@@ -1,0 +1,21 @@
+on:
+  push:
+    branches:
+      - main
+      - 'release/*'
+
+    paths-ignore:
+      - '*.md'
+      - 'docs/**'
+
+
+jobs:
+  build:
+    runs-on: ubunut-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v6
+
+      - name: print message
+        run: |
+          echo "workflow triggered as push was not in docs and .md file"

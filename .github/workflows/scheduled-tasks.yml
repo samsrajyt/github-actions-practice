@@ -14,10 +14,10 @@ jobs:
     steps:
       - name: Print which Schedule Triggered
         run: |
-          echo " Schedule Triggered : ${{ github.event.schedule }}"
+          echo "Schedule Triggered : ${{ github.event.schedule }}"
 
       - name: Health Check
         run: |
-          respone_code=$(curl -s -o /dev/null -w "%{http_code}" https://github.com/samsrajyt/90DaysOfDevOps)
+          resposne_code=$(curl -s -o /dev/null -w "%{http_code}" https://github.com/samsrajyt/90DaysOfDevOps)
           echo "Response Code: $response_code"
 

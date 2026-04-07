@@ -1,0 +1,57 @@
+
+on:
+  workflow_call:
+
+    inputs:
+      python_version:
+        description: 'holds the python version'
+        type: number
+        required: true
+
+    run_tests:
+        description: to run test or not
+        type: boolean
+        default: true
+    
+    outputs:
+      test_result:
+        value: ${{ jobs.build-and-test.outputs.test_result }}
+
+
+
+
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    outputs:
+      test_result: ${{ steps.exit_code.outputs.test_result }}
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v6
+
+      - name: Setup Language Runtime
+        uses: actions/setup-python@v6
+        with:
+          python-version: "${{ inputs.python-version }}"
+          cache: 'pip'
+
+
+      - name: Install Dependencies
+        run: pip install -r ./app/requirements.txt
+
+
+      - name: Run test
+        id: exit_code
+        if : ${{ inputs.run_tests == true }}
+        run: |
+          cd ./app
+          exit_code = pytest.main(["test_app.py", "-q", "--tb=no"])
+          if [ "$exit_code" -eq 0 ];then
+            echo "test_result=passed" >> $GITHUB_OUTPUT
+          else
+            echo "test_result=failed" >> $GITHUB_OUTPUT
+          
+
+      
+

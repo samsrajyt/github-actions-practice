@@ -45,7 +45,7 @@ jobs:
         id: exit_code
         if : ${{ inputs.run_tests == true }}
         run: |
-          cd ./app
+          cd app/
           exit_code = pytest.main(["test_app.py", "-q", "--tb=no"])
           if [ "$exit_code" -eq 0 ];then
             echo "test_result=passed" >> $GITHUB_OUTPUT

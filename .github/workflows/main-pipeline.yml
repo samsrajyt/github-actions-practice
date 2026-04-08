@@ -15,7 +15,6 @@ jobs:
     needs: build-and-test
     uses: ./.github/workflows/reusable-docker.yml
     with:
-      tag: latest
       tag: $(echo ${{ github.sha }} | cut -c1-7)
   
   deploy:
@@ -23,9 +22,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: deploying image
-        environment: production
         run: |
           echo "Deploying Image: ${{ jobs.build-and-push.outputs.image_url }}"
+        with:
+          env:
+            environment: "production"
 
 
 

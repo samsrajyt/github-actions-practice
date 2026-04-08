@@ -23,7 +23,7 @@ jobs:
     steps:
       - name: deploying image
         run: |
-          echo "Deploying Image: ${{ jobs.build-and-push.outputs.image_url }}"
+          echo "Deploying Image: ${{ needs.build-and-push.outputs.image_url }}"
         with:
           env:
             environment: "production"
